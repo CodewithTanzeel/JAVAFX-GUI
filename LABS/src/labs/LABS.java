@@ -8,7 +8,7 @@ public class LABS {
             for(int i= 0; i< myList.length; i++) {
                 myList[i] = Math.random() * 100.0;
             }
-            System.out.println(myMonths);
+            System.out.println(myMonths[]);
             System.out.println(myList);
            
         }
