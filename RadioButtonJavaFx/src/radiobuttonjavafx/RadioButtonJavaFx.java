@@ -59,15 +59,31 @@ public class RadioButtonJavaFx extends Application{
         rbTrain.setToggleGroup(tg);
         rbCar.setToggleGroup(tg);
         rbPlane.setToggleGroup(tg);
-        
-         
-        
-             
+        //Handle action events for the radio Buttons.
+        rbTrain.setOnAction(new EventHandler<ActionEvent>(){
+            public void handle(ActionEvent ae){
+                response.setText("Transport selected is the Train");
+            }
+        });
+        rbTrain.setOnAction(new EventHandler<ActionEvent>(){
+            public void handle(ActionEvent ae){
+                response.setText("Transport selected is the Car");
+        }
+        });
+        rbPlane.setOnAction(new EventHandler<ActionEvent>(){
+            public void handle(ActionEvent ae){
+                response.setText("Transport selected is the AirPlane");
+        }
+        });              
+       
+    // Fire the event for the  first selection.This causes that radio
+//    button to be selected and action event for that button occur
+    rbTrain.fire();
     
-        
-      
-                
-    }
+    // Add the label and button tothe scene graph 
+    rootNode.getChildren().addAll(rbTrain,rbPlane,rbCar,response);
+    // Show the stage and its Scene.
+    myStage.show();
     
-    
+ }
 }
