@@ -28,6 +28,7 @@ public class CheckBoxJavaFx  extends Application{
     public static void main(String[] args) {
         launch(args);
     }
+    @Override
     public void start(Stage myStage){
         
         // Give the Stage a title.
@@ -43,7 +44,7 @@ public class CheckBoxJavaFx  extends Application{
         myStage.setScene(myScene);
         Label heading = new Label("Select Deployment Options");
         // Label that will report the status of the selected check box;
-        Label response = new Label("No Deployment Seleceted");
+        response = new Label("No Deployment Seleceted");
         // Create a label that will report all targets selected. 
         Label allTargets = new Label("Taget list: <None>");
         // Create The check boxes.
@@ -58,6 +59,7 @@ public class CheckBoxJavaFx  extends Application{
                    
                 }else{
                     response.setText("WebDeploymentCleared");
+                      showAll();
                     
                 }
             }
@@ -69,17 +71,19 @@ public class CheckBoxJavaFx  extends Application{
                    
                 }else{
                     response.setText("DesktopDeploymentCleared");
+                    showAll();
                     
                 }
             }
         });
            cbMobile.setOnAction(new EventHandler<ActionEvent>(){
             public void handle(ActionEvent ae){
-                if(cbWeb.isSelected()){
+                if(cbMobile.isSelected()){
                     response.setText("Mobile Deployment Selected");
                    
                 }else{
                     response.setText("MobileDeploymentCleared");
+                      showAll();
                     
                 }
             }
