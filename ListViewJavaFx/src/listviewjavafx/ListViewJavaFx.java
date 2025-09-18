@@ -36,6 +36,10 @@ public class ListViewJavaFx extends Application {
         // Observable list of transport types
         ObservableList<String> transportTypes = 
                 FXCollections.observableArrayList("Train", "Car", "Airplane");
+        
+        // When your add more number of items which can be displayed in a certain
+        // dimension then it will be displayed  with a scroll bar
+        
 
         // Create ListView
         ListView<String> lvTransport = new ListView<>(transportTypes);
